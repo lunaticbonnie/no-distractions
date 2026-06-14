@@ -13,7 +13,7 @@ public class LocalPlayerMixin {
   @Definition(id = "getFoodData", method = "Lnet/minecraft/client/player/LocalPlayer;getFoodData()Lnet/minecraft/world/food/FoodData;")
   @Definition(id = "getFoodLevel", method = "Lnet/minecraft/world/food/FoodData;getFoodLevel()I")
   @Expression("(float)this.getFoodData().getFoodLevel() > 6.0")
-  @ModifyExpressionValue(method = "hasEnoughFoodToStartSprinting", at = @At("MIXINEXTRAS:EXPRESSION"))
+  @ModifyExpressionValue(method = "hasEnoughFoodToSprint", at = @At("MIXINEXTRAS:EXPRESSION"))
   private boolean hasEnoughFoodToSprint(boolean original) {
     LocalPlayer player = (LocalPlayer)(Object)this;
     boolean missingHealth = player.getHealth() < player.getMaxHealth();

@@ -15,3 +15,4 @@ Minecraft mod to remove distractions from the building aspect of Minecraft (part
     - You lose saturation normally.
 
 TODO: test on server
+TODO: make an icon
