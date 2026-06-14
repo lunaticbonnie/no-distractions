@@ -1,5 +1,6 @@
 package patrolin.nodistractions.mixin;
 
+import com.llamalad7.mixinextras.injector.wrapmethod.WrapMethod;
 import com.llamalad7.mixinextras.injector.wrapoperation.Operation;
 import com.llamalad7.mixinextras.injector.wrapoperation.WrapOperation;
 import com.llamalad7.mixinextras.sugar.Local;
@@ -15,6 +16,7 @@ import java.util.function.Consumer;
 
 @Mixin(ServerPlayer.class)
 public class ServerPlayerMixin {
+  // sleep rework
   @Redirect(method="startSleepInBed", at=@At(value="INVOKE", target="Lnet/minecraft/server/level/ServerPlayer;setRespawnPosition(Lnet/minecraft/server/level/ServerPlayer$RespawnConfig;Z)V"))
   private void setRespawnPoint(ServerPlayer instance, ServerPlayer.RespawnConfig respawnConfig, boolean bl) {}
   @WrapOperation(method="startSleepInBed", at= @At(value="INVOKE", target="Lnet/minecraft/server/level/ServerLevel;isBrightOutside()Z"))
@@ -36,4 +38,8 @@ public class ServerPlayerMixin {
     ServerPlayer player = (ServerPlayer)(Object)this;
     player.setRespawnPosition(new ServerPlayer.RespawnConfig(player.level().dimension(), blockPos, player.getYRot(), false), true);
   }
+
+  // hunger rework
+  @WrapMethod(method="tickRegeneration")
+  private void tickRegeneration(Operation<Void> original) {}
 }

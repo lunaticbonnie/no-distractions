@@ -8,14 +8,13 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 @Mixin(SleepStatus.class)
 public class SleepStatusMixin {
+  // sleep rework
   @Inject(method="areEnoughSleeping", at=@At("HEAD"), cancellable = true)
   private void areEnoughSleeping(CallbackInfoReturnable<Boolean> cir) {
     cir.setReturnValue(false);
-    cir.cancel();
   }
   @Inject(method="areEnoughDeepSleeping", at=@At("HEAD"), cancellable = true)
   private void areEnoughDeepSleeping(CallbackInfoReturnable<Boolean> cir) {
     cir.setReturnValue(false);
-    cir.cancel();
   }
 }
