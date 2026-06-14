@@ -13,3 +13,5 @@ Minecraft mod to remove distractions from the building aspect of Minecraft (part
     - Hunger only drops if you are missing either health or hunger, or you have a harmful potion effect.
     - Saturation drops normally.
     - You can eat food if you are missing either health, hunger or saturation.
+
+TODO: test on server
