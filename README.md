@@ -7,8 +7,8 @@ Minecraft mod to remove distractions from the building aspect of Minecraft (part
     - You can only set your spawn if there are no monsters nearby or in the daytime.
     - Disable vanilla phantom spawns
 3) Rework hunger
-    - Health/hunger/saturation can drop on peaceful difficulty.
-    - You start with 19/20 hunger.
-    - You can eat food if you are missing either health, hunger or saturation.
-    - Hunger only drops if you are missing health, missing hunger, or you have a harmful potion effect.
+    - Health, hunger and saturation can drop on peaceful difficulty.
+    - You start and respawn with 19/20 hunger.
+    - Hunger only drops if you are missing either health or hunger, or you have a harmful potion effect.
     - Saturation drops normally.
+    - You can eat food if you are missing either health, hunger or saturation.
