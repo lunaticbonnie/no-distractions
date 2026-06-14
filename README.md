@@ -1,7 +1,7 @@
 # no-distractions
 Minecraft mod to remove distractions from the building aspect of Minecraft (partially inspired by ["Another serious critique of Minecraft"](https://www.youtube.com/watch?v=_KqeLT-EOe0&t=1590s&pp=0gcJCT4LAYcqIYzv))
 
-1) Removed villages (no free houses or food)
+1) Removed villages (no free houses, food or trading)
 2) Reworked night
     - Removed skipping the night by sleeping (no skipping hostile mobs, no being pestered by other people to sleep or rejoin every 5 seconds in multiplayer).
     - Disabled vanilla phantom spawns.
