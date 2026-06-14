@@ -1,4 +1,4 @@
-"BothMixins"; "ServerLevelMixin", "ServerPlayerMixin", "SleepStatusMixin"
+"BothMixins"; "FoodDataMixin", "PhantomSpawnerMixin", "PlayerMixin","ServerLevelMixin", "ServerPlayerMixin", "SleepStatusMixin"
 "ClientMixins";
 "ServerMixins";
 "mixinsextras"; "mixinextras": {"minVersion": "0.5.4"}
