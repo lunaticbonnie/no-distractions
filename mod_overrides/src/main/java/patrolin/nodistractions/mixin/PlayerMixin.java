@@ -30,14 +30,11 @@ public class PlayerMixin {
   }
   @WrapMethod(method="canEat")
   private boolean canEat(boolean canAlwaysEat, Operation<Boolean> original) {
-    boolean result = original.call(canAlwaysEat);
-
     Player player = (Player)(Object)this;
     FoodData foodData = player.getFoodData();
     boolean missingHealth = player.getHealth() < player.getMaxHealth();
     boolean missingSaturation = !(foodData.getSaturationLevel() > 0);
-
-    return result || missingHealth || missingSaturation;
+    return original.call(canAlwaysEat) || missingHealth || missingSaturation;
   }
 
   @Unique
