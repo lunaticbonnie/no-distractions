@@ -7,6 +7,7 @@ clean:
   python change_version.py clean
 change-version:
   python change_version.py $$ARGS
+  $$GRADLEW genSources // for searching the minecraft source code
 run:
   $$GRADLEW runClient
 build:

@@ -9,7 +9,5 @@ import org.spongepowered.asm.mixin.Mixin;
 @Mixin(PhantomSpawner.class)
 public class PhantomSpawnerMixin {
   @WrapMethod(method="tick")
-  private int maybeSpawnPhantoms(ServerLevel serverLevel, boolean bl, boolean bl2, Operation<Void> original) {
-    return 0;
-  }
+  private void maybeSpawnPhantoms(ServerLevel serverLevel, boolean bl, boolean bl2, Operation<Void> original) {}
 }
