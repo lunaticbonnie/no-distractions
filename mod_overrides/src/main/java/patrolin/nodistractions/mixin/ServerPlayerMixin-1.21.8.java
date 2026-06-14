@@ -16,7 +16,7 @@ import java.util.function.Consumer;
 
 @Mixin(ServerPlayer.class)
 public class ServerPlayerMixin {
-  // sleep rework
+  // night rework
   @Redirect(method="startSleepInBed", at=@At(value="INVOKE", target="Lnet/minecraft/server/level/ServerPlayer;setRespawnPosition(Lnet/minecraft/server/level/ServerPlayer$RespawnConfig;Z)V"))
   private void setRespawnPoint(ServerPlayer instance, ServerPlayer.RespawnConfig respawnConfig, boolean bl) {}
   @WrapOperation(method="startSleepInBed", at= @At(value="INVOKE", target="Lnet/minecraft/server/level/ServerLevel;isBrightOutside()Z"))
