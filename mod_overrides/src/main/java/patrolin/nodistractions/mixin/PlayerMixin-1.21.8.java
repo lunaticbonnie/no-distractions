@@ -1,8 +1,5 @@
 package patrolin.nodistractions.mixin;
 
-import com.llamalad7.mixinextras.expression.Definition;
-import com.llamalad7.mixinextras.expression.Expression;
-import com.llamalad7.mixinextras.injector.ModifyExpressionValue;
 import com.llamalad7.mixinextras.injector.wrapmethod.WrapMethod;
 import com.llamalad7.mixinextras.injector.wrapoperation.Operation;
 import net.minecraft.world.effect.MobEffectCategory;
@@ -11,7 +8,6 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.food.FoodData;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Unique;
-import org.spongepowered.asm.mixin.injection.At;
 
 @Mixin(Player.class)
 public class PlayerMixin {
@@ -46,16 +42,6 @@ public class PlayerMixin {
       MobEffectCategory category = effectInstance.getEffect().value().getCategory();
       if (category == MobEffectCategory.HARMFUL) return true;
     }
-    return false;
-  }
-
-  // hunger rework
-  @Definition(id = "getDifficulty", method = "Lnet/minecraft/world/level/Level;getDifficulty()Lnet/minecraft/world/Difficulty;")
-  @Definition(id = "PEACEFUL", field = "Lnet/minecraft/world/Difficulty;PEACEFUL:Lnet/minecraft/world/Difficulty;")
-  @Definition(id = "level", method = "Lnet/minecraft/world/entity/player/Player;level()Lnet/minecraft/world/level/Level;")
-  @Expression("this.level().getDifficulty() == PEACEFUL")
-  @ModifyExpressionValue(method = "aiStep", at = @At("MIXINEXTRAS:EXPRESSION"))
-  private boolean doPeacefulRegeneration(boolean original) {
     return false;
   }
 }
