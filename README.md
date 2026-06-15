@@ -16,6 +16,6 @@ Minecraft mod to remove distractions from the building aspect of Minecraft (part
 
 Optionally, you can also install [AppleSkin](https://www.curseforge.com/minecraft/mc-mods/appleskin) (and disable showing the exhaustion) to show the saturation.
 
-Available on [CurseForge](https://www.curseforge.com/minecraft/mc-mods/no-distractions).
+Available on [CurseForge](https://www.curseforge.com/minecraft/mc-mods/no-distractions) and [Modrinth](https://modrinth.com/mod/no-distractions).
 
 TODO: forge version
