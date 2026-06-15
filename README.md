@@ -14,4 +14,8 @@ Minecraft mod to remove distractions from the building aspect of Minecraft (part
     - You only lose hunger if you are either missing health, missing hunger, or you have a harmful potion effect.
     - You lose saturation normally.
 
+Optionally, you can also install [AppleSkin](https://www.curseforge.com/minecraft/mc-mods/appleskin) (and disable showing the exhaustion) to show the saturation.
+
+Available on [CurseForge](https://www.curseforge.com/minecraft/mc-mods/no-distractions).
+
 TODO: forge version
