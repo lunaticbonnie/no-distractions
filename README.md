@@ -14,5 +14,4 @@ Minecraft mod to remove distractions from the building aspect of Minecraft (part
     - You only lose hunger if you are either missing health, missing hunger, or you have a harmful potion effect.
     - You lose saturation normally.
 
-TODO: test on server
-TODO: make an icon
+TODO: forge version
