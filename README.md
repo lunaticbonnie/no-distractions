@@ -1,5 +1,5 @@
 # no-distractions
-Minecraft mod to remove distractions from the building aspect of Minecraft (partially inspired by ["Another serious critique of Minecraft"](https://www.youtube.com/watch?v=_KqeLT-EOe0))
+Minecraft mod to remove distractions from the building aspect of Minecraft (partially inspired by ["Another serious critique of Minecraft"](https://www.youtube.com/watch?v=_KqeLT-EOe0)).
 
 1) Removed villages (no free houses, food or trading)
 2) Reworked night
