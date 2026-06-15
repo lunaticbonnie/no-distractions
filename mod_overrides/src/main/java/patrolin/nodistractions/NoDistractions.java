@@ -9,4 +9,6 @@ public class NoDistractions implements ModInitializer {
 	public void onInitialize() {}
 	public static final String MOD_ID = "nodistractions";
 	public static final Logger LOGGER = LogManager.getLogger(MOD_ID);
+
+  public static final int STARTING_HUNGER = 10;
 }

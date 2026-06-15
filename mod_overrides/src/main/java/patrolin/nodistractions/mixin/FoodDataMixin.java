@@ -11,6 +11,7 @@ import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
+import patrolin.nodistractions.NoDistractions;
 
 @Mixin(FoodData.class)
 public class FoodDataMixin {
@@ -19,7 +20,7 @@ public class FoodDataMixin {
   private int foodLevel;
   @Inject(method="<init>", at=@At("RETURN"))
   private void onInit(CallbackInfo ci) {
-    foodLevel = 19;
+    foodLevel = NoDistractions.STARTING_HUNGER;
   }
 
   @Definition(id = "difficulty", local = @Local(type = Difficulty.class))

@@ -46,7 +46,6 @@ public class PlayerMixin {
     return false;
   }
 
-  // hunger rework
   @Definition(id = "getDifficulty", method = "Lnet/minecraft/world/level/Level;getDifficulty()Lnet/minecraft/world/Difficulty;")
   @Definition(id = "PEACEFUL", field = "Lnet/minecraft/world/Difficulty;PEACEFUL:Lnet/minecraft/world/Difficulty;")
   @Definition(id = "level", method = "Lnet/minecraft/world/entity/player/Player;level()Lnet/minecraft/world/level/Level;")
