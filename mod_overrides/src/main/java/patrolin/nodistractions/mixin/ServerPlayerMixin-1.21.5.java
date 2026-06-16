@@ -6,21 +6,21 @@ import com.llamalad7.mixinextras.injector.wrapoperation.WrapOperation;
 import com.llamalad7.mixinextras.sugar.Local;
 import com.mojang.datafixers.util.Either;
 import net.minecraft.core.BlockPos;
-import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.world.level.Level;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
-import org.spongepowered.asm.mixin.injection.Redirect;
+
 import java.util.function.Consumer;
 
 @Mixin(ServerPlayer.class)
 public class ServerPlayerMixin {
   // night rework
-  @Redirect(method="startSleepInBed", at=@At(value="INVOKE", target="Lnet/minecraft/server/level/ServerPlayer;setRespawnPosition(Lnet/minecraft/server/level/ServerPlayer$RespawnConfig;Z)V"))
-  private void setRespawnPoint(ServerPlayer instance, ServerPlayer.RespawnConfig respawnConfig, boolean bl) {}
-  @WrapOperation(method="startSleepInBed", at= @At(value="INVOKE", target="Lnet/minecraft/server/level/ServerLevel;isBrightOutside()Z"))
-  private boolean isDaytime(ServerLevel instance, Operation<Boolean> original, @Local(argsOnly = true) BlockPos blockPos) {
+  @WrapOperation(method="startSleepInBed", at=@At(value="INVOKE", target="Lnet/minecraft/server/level/ServerPlayer;setRespawnPosition(Lnet/minecraft/server/level/ServerPlayer$RespawnConfig;Z)V"))
+  private void setRespawnPoint(ServerPlayer instance, ServerPlayer.RespawnConfig respawnConfig, boolean bl, Operation<Void> original) {}
+  @WrapOperation(method="startSleepInBed", at= @At(value="INVOKE", target="Lnet/minecraft/world/level/Level;isBrightOutside()Z"))
+  private boolean isDaytime(Level instance, Operation<Boolean> original, @Local(argsOnly = true) BlockPos blockPos) {
     boolean result = original.call(instance);
     if (result) setRespawnPosition(blockPos);
     return result;
