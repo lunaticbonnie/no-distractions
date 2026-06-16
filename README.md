@@ -18,7 +18,9 @@ Optionally, you can also install [AppleSkin](https://www.curseforge.com/minecraf
 
 Available on [CurseForge](https://www.curseforge.com/minecraft/mc-mods/no-distractions) and [Modrinth](https://modrinth.com/mod/no-distractions).
 
-TODO: forge version
+## Todo list
+- forge version
+- give player regen while sleeping?
 
 ## dev
 ```

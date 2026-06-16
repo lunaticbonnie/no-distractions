@@ -35,6 +35,6 @@ public class ServerPlayerMixin {
   @Unique
   private void setRespawnPosition(BlockPos blockPos) {
     ServerPlayer player = (ServerPlayer)(Object)this;
-    player.setRespawnPosition(player.level.dimension(), blockPos, player.getYRot(), false, true);
+    player.setRespawnPosition(player.level().dimension(), blockPos, player.getYRot(), false, true);
   }
 }
