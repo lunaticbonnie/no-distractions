@@ -40,7 +40,7 @@ public class PlayerMixin {
   @Unique
   private static boolean hasHarmfulMobEffect(Player player) {
     for (MobEffectInstance effectInstance : player.getActiveEffects()) {
-      MobEffectCategory category = effectInstance.getEffect().getCategory();
+      MobEffectCategory category = effectInstance.getEffect().value().getCategory();
       if (category == MobEffectCategory.HARMFUL) return true;
     }
     return false;
@@ -48,8 +48,8 @@ public class PlayerMixin {
 
   @Definition(id = "getDifficulty", method = "Lnet/minecraft/world/level/Level;getDifficulty()Lnet/minecraft/world/Difficulty;")
   @Definition(id = "PEACEFUL", field = "Lnet/minecraft/world/Difficulty;PEACEFUL:Lnet/minecraft/world/Difficulty;")
-  @Definition(id = "level", field = "Lnet/minecraft/world/entity/player/Player;level:Lnet/minecraft/world/level/Level;")
-  @Expression("this.level.getDifficulty() == PEACEFUL")
+  @Definition(id = "level", method = "Lnet/minecraft/world/entity/player/Player;level()Lnet/minecraft/world/level/Level;")
+  @Expression("this.level().getDifficulty() == PEACEFUL")
   @ModifyExpressionValue(method = "aiStep", at = @At("MIXINEXTRAS:EXPRESSION"))
   private boolean doPeacefulRegeneration(boolean original) {
     return false;
