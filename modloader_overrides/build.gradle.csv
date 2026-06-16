@@ -1,2 +1,0 @@
-it.options.release = .+$; it.options.release = 8
-sourceCompatibility = .+$; sourceCompatibility = JavaVersion.VERSION_1_8
