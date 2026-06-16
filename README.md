@@ -19,3 +19,27 @@ Optionally, you can also install [AppleSkin](https://www.curseforge.com/minecraf
 Available on [CurseForge](https://www.curseforge.com/minecraft/mc-mods/no-distractions) and [Modrinth](https://modrinth.com/mod/no-distractions).
 
 TODO: forge version
+
+## dev
+```
+Download https://github.com/Patrolin/justice
+Download Python 3
+Download mod templates for all desired Minecraft versions into `templates/*` from:
+  a) https://fabricmc.net/develop/template/
+    Mod Name="ExampleMod"
+    Package Name="com.examplemod"
+    Minecraft Version=...
+    Split client and common sources=false
+  b) https://files.minecraftforge.net/net/minecraftforge/forge/
+  c) https://neoforged.net/mod-generator/
+    Mod Name="ExampleMod"
+    Package Name="com.examplemod"
+    Minecraft Version=...
+    Mod Authors="Me!"
+    Mod Description="Description"
+    Advanced Options.Add mixin configuration=true
+```
+`ice list` to list versions \
+`ice <fabric|forge|neoforge> <mc_version>` to change to the selected version \
+`ice run` or Open `./current` in IntelliJ IDEA and run `runClient` gradle task \
+`ice build-version <version>` to run and build the selected version
