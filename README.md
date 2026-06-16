@@ -30,7 +30,9 @@ Download mod templates for all desired Minecraft versions into `templates/*` fro
     Package Name="com.examplemod"
     Minecraft Version=...
     Split client and common sources=false
+    Rename to `fabric-<mc_version>.zip`
   b) https://files.minecraftforge.net/net/minecraftforge/forge/
+    Rename to `forge-<mc_version>-<mdk_version>.zip`
   c) https://neoforged.net/mod-generator/
     Mod Name="ExampleMod"
     Package Name="com.examplemod"
@@ -38,6 +40,7 @@ Download mod templates for all desired Minecraft versions into `templates/*` fro
     Mod Authors="Me!"
     Mod Description="Description"
     Advanced Options.Add mixin configuration=true
+    Rename to `neoforge-<mc_version>.zip`
 ```
 `ice list` to list versions \
 `ice <fabric|forge|neoforge> <mc_version>` to change to the selected version \
