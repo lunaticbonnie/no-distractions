@@ -40,7 +40,7 @@ public class PlayerMixin {
   @Unique
   private static boolean hasHarmfulMobEffect(Player player) {
     for (MobEffectInstance effectInstance : player.getActiveEffects()) {
-      MobEffectCategory category = effectInstance.getEffect().getCategory();
+      MobEffectCategory category = effectInstance.getEffect().value().getCategory();
       if (category == MobEffectCategory.HARMFUL) return true;
     }
     return false;
