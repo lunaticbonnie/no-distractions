@@ -47,3 +47,29 @@ Download mod templates for all desired Minecraft versions into `templates/*` fro
 `ice <fabric|forge|neoforge> <mc_version>` to change to the selected version \
 `ice run` or Open `./current` in IntelliJ IDEA and run `runClient` gradle task \
 `ice build-version <version>` to run and build the selected version
+
+## manual forge build
+```
+// https://github.com/SpongePowered/Mixin/wiki/Mixins-on-Minecraft-Forge + https://github.com/LlamaLad7/MixinExtras
+// build.gradle
+plugins {
+    id 'org.spongepowered.mixin' version '0.7.+'
+}
+dependencies {
+    annotationProcessor 'org.spongepowered:mixin:0.8.5:processor'
+    compileOnly(annotationProcessor("io.github.llamalad7:mixinextras-common:0.5.4"))
+    implementation(jarJar("io.github.llamalad7:mixinextras-forge:0.5.4")) {
+        jarJar.ranged(it, "[0.5.4,)")
+    }
+}
+mixin {
+    add sourceSets.main, 'nodistractions.mixins.refmap.json'
+    config 'nodistractions.mixins.json'
+}
+// gradle.properties
+...
+
+Copy src/main/java from `ice forge <mc_version>`
+Copy src/main/resources from `ice forge <mc_version>`
+Delete night rework in ServerPlayerMixin.java
+```
