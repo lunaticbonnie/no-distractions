@@ -15,6 +15,7 @@ Minecraft mod to remove distractions from the building aspect of Minecraft (part
     - You lose saturation normally.
 
 Optionally, you can also install [AppleSkin](https://www.curseforge.com/minecraft/mc-mods/appleskin) (and disable showing the exhaustion) to show the saturation.
+Recommended to use alongside [Stoneholm](https://www.curseforge.com/minecraft/mc-mods/underground-villages-stoneholm) in case that other mods require villagers.
 
 Available on [CurseForge](https://www.curseforge.com/minecraft/mc-mods/no-distractions) and [Modrinth](https://modrinth.com/mod/no-distractions).
 
