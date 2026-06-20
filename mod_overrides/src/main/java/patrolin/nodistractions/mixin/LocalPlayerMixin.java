@@ -6,6 +6,7 @@ import com.llamalad7.mixinextras.injector.ModifyExpressionValue;
 import net.minecraft.client.player.LocalPlayer;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
+import patrolin.nodistractions.NoDistractions;
 
 @Mixin(LocalPlayer.class)
 public class LocalPlayerMixin {
@@ -16,7 +17,7 @@ public class LocalPlayerMixin {
   @ModifyExpressionValue(method = "hasEnoughFoodToStartSprinting", at = @At("MIXINEXTRAS:EXPRESSION"))
   private boolean hasEnoughFoodToSprint(boolean original) {
     LocalPlayer player = (LocalPlayer)(Object)this;
-    boolean missingHealth = player.getHealth() < player.getMaxHealth();
+    boolean missingHealth = NoDistractions.cantSprint(player.getHealth(), player.getMaxHealth());
     return original && !missingHealth;
   }
 }

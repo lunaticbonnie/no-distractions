@@ -6,7 +6,7 @@ Minecraft mod to remove distractions from the building aspect of Minecraft (part
     - Removed skipping the night by sleeping (no skipping hostile mobs, no being pestered by other people to sleep or rejoin every 5 seconds in multiplayer).
     - Disabled vanilla phantom spawns.
     - You start and respawn with full health, but sprint is disabled if you are missing health.
-    - You can only set your spawn if there are no monsters nearby or in the daytime (doesn't work on Neoforge 1.21.2 and above).
+    - You can only set your spawn if there are no monsters nearby or in the daytime (doesn't work on Neoforge).
 3) Reworked hunger
     - You start and respawn with 10/20 hunger and some saturation.
     - You can lose health, hunger and saturation on peaceful difficulty.

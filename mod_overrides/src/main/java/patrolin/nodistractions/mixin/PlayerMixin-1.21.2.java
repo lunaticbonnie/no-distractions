@@ -8,6 +8,7 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.food.FoodData;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Unique;
+import patrolin.nodistractions.NoDistractions;
 
 @Mixin(Player.class)
 public class PlayerMixin {
@@ -16,7 +17,7 @@ public class PlayerMixin {
   private void causeFoodExhaustion(float amount, Operation<Void> original) {
     Player player = (Player)(Object)this;
     FoodData foodData = player.getFoodData();
-    boolean missingHealth = player.getHealth() < player.getMaxHealth();
+    boolean missingHealth = NoDistractions.cantEat(player.getHealth(), player.getMaxHealth());
     boolean missingHunger = foodData.getFoodLevel() < 20;
     boolean hasSaturation = foodData.getSaturationLevel() > 0;
     boolean hasHarmfulEffect = PlayerMixin.hasHarmfulMobEffect(player);
@@ -28,7 +29,7 @@ public class PlayerMixin {
   private boolean canEat(boolean canAlwaysEat, Operation<Boolean> original) {
     Player player = (Player)(Object)this;
     FoodData foodData = player.getFoodData();
-    boolean missingHealth = player.getHealth() < player.getMaxHealth();
+    boolean missingHealth = NoDistractions.cantEat(player.getHealth(), player.getMaxHealth());
     boolean missingSaturation = !(foodData.getSaturationLevel() > 0);
     return original.call(canAlwaysEat) || missingHealth || missingSaturation;
   }
