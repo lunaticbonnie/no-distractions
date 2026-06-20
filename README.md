@@ -1,13 +1,13 @@
 # no-distractions
 Minecraft mod to remove distractions from the building aspect of Minecraft (partially inspired by ["Another serious critique of Minecraft"](https://www.youtube.com/watch?v=_KqeLT-EOe0)).
 
-1) Removed villages (no free houses, food or trading)
-2) Reworked night
-    - Removed skipping the night by sleeping (no skipping hostile mobs, no being pestered by other people to sleep or rejoin every 5 seconds in multiplayer).
-    - Disabled vanilla phantom spawns.
+1) Remove villages (no free houses, food or trading)
+2) Rework night
+    - Remove skipping the night by sleeping (no skipping hostile mobs, no being pestered by other people to sleep or rejoin every 5 seconds in multiplayer).
+    - Disable vanilla phantom spawns.
     - You start and respawn with full health, but sprint is disabled if you are missing 1 or more hearts.
     - You can only set your spawn if there are no monsters nearby or in the daytime (doesn't work on Neoforge).
-3) Reworked hunger
+3) Rework hunger
     - You start and respawn with 10/20 hunger and some saturation.
     - You can lose health, hunger and saturation on peaceful difficulty.
     - You can eat food if you are either missing health, missing hunger, or have zero saturation.
