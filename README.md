@@ -13,6 +13,8 @@ Minecraft mod to remove distractions from the building aspect of Minecraft (part
     - You can eat food if you are either missing health, missing hunger, or have zero saturation.
     - You only lose hunger if you are either missing health, missing hunger, or you have a harmful potion effect.
     - You lose saturation normally.
+4) More building options
+    - Allow placing ladders without supporting blocks.
 
 Optionally, you can also install [AppleSkin](https://www.curseforge.com/minecraft/mc-mods/appleskin) (and disable showing the exhaustion) to show the saturation. \
 Recommended to use alongside [Stoneholm](https://www.curseforge.com/minecraft/mc-mods/underground-villages-stoneholm) in case that other mods require villagers.
