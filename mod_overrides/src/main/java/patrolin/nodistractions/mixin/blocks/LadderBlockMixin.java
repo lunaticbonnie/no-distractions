@@ -1,4 +1,4 @@
-package patrolin.nodistractions.mixin;
+package patrolin.nodistractions.mixin.blocks;
 
 import com.llamalad7.mixinextras.injector.wrapoperation.Operation;
 import com.llamalad7.mixinextras.injector.wrapoperation.WrapOperation;
@@ -20,7 +20,7 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 @Mixin(LadderBlock.class)
-public class LadderMixin {
+public class LadderBlockMixin {
   @Shadow @Final public static DirectionProperty FACING;
 
   @Inject(method="canAttachTo", at=@At("HEAD"), cancellable = true)
@@ -33,10 +33,7 @@ public class LadderMixin {
   }
   @WrapOperation(method="getStateForPlacement", at= @At(value = "INVOKE", target = "Lnet/minecraft/world/level/block/state/BlockState;setValue(Lnet/minecraft/world/level/block/state/properties/Property;Ljava/lang/Comparable;)Ljava/lang/Object;"))
   Object getFacingDirection(BlockState instance, Property<?> property, Comparable<?> comparable, Operation<Object> original, @Local(argsOnly = true) BlockPlaceContext context) {
-    if (property == FACING) {
-      return instance.setValue(FACING, context.getHorizontalDirection().getOpposite());
-    } else {
-      return original.call(instance, property, comparable);
-    }
+    if (property == FACING) comparable = context.getHorizontalDirection().getOpposite();
+    return original.call(instance, property, comparable);
   }
 }
